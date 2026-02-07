@@ -11,6 +11,8 @@ import { Cake } from 'lucide-react';
 import { Hourglass } from 'lucide-react';
 import { Check } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
+import Divider from '../ui/Divider.jsx'
+import rajesh from '../assets/rajesh.svg'
 
 
 function SectionHeader({ title, subtitle, action }) {
@@ -26,45 +28,44 @@ function SectionHeader({ title, subtitle, action }) {
 }
 
 function RightSidebarCard({ title, children, image }) {
+  console.log('children', children)
   const TitleImage = image
-  const ContentImage = children.icon
 
   return (
-    <div className="flex flex-col gap-4 py-4 px-2 bg-white hover:bg-[#F0F1F1] rounded-lg shadow-xs">
-      <div>
-        <span>
-          <TitleImage className={'bg-gray-300'} />
-          <div className="text-md font-bold text-slate-800 border-b-gray-100">{title}</div>
-          <span></span>
-        </span>
-
-      </div>
-      <div className="space-y-3">
-        <div className='flex gap-2'>
-          {ContentImage ?
-            <ContentImage className={'bg-gray-300 rounded-full'} />
-            : <div className='border border-gray-300 rounded-[5px]'>
-
-            </div>}
-          <div></div>
+    <div className="flex flex-col gap-4 px-5 py-4 bg-white hover:bg-[#F0F1F1] rounded-lg shadow-xs">
+      <div className='flex justify-between pb-3 items-center border-0 border-b border-gray-100'>
+        <div className="flex justify-start items-center gap-2 ">
+          <span className='border border-gray-100 rounded-lg w-7.5 h-7.5'>
+            <TitleImage className='text-gray-600 w-3.5 h-3.5' />
+          </span>
+          <span className='text-md font-bold text-slate-800'>{title}</span>
         </div>
+        {title === 'Upcoming Holidays' && <span className='text-xs font-medium text-blue-500'>View All</span>}
       </div>
+      {
+        children.map((val) => {
+          return <MiniRow key={val.props.name} name={val.props.name} role={val.props.role} today={val.props.today} date={val.props.date} image={val.props.image} />
+        })
+      }
+
     </div>
   )
 }
 
-function MiniRow({ primary, secondary, pill }) {
+function MiniRow({ name, role, image, date, today }) {
+  const ContentImage = image
+  console.log('name,',image, name, role, date)
   return (
-    <div className="flex items-start justify-between gap-3">
-      <div className="min-w-0">
-        <div className="truncate text-sm font-medium text-slate-900">{primary}</div>
-        <div className="mt-0.5 text-xs text-slate-500">{secondary}</div>
+    <div className="space-y-5">
+      <p className=''>{today ? 'Today' : 'This week'}</p>
+      <div className='flex gap-2'>
+        {ContentImage ?
+          <image src={`/${image}`} className={'text-gray-300 rounded-full w-8 h-8'} />
+          : <div className='border border-gray-300 rounded-[5px]'>
+
+          </div>}
+        <div></div>
       </div>
-      {pill ? (
-        <div className="rounded-full border border-slate-200 bg-white px-2 py-1 text-[11px] font-semibold text-slate-600">
-          {pill}
-        </div>
-      ) : null}
     </div>
   )
 }
@@ -87,10 +88,10 @@ export const DashboardNav = ({ username }) => {
           <span className='bg-blue-500/80 w-8 h-8 text-[11px] text-white text-center font-semibold  rounded-full'>SJ</span>
           <span className='flex gap-2 items-center'>
             <span className='text-md font-semibold text-[#222224]'>Sarah Johnson</span>
-            <ChevronDown className='text-gray-500 w-4 h-4'/>
-            </span>
-      </button>
-    </div>
+            <ChevronDown className='text-gray-500 w-4 h-4' />
+          </span>
+        </button>
+      </div>
     </div >
   )
 }
@@ -165,21 +166,21 @@ export default function DashboardPage() {
             {/* Right sidebar */}
             <div className="w-full xl:w-[340px] shrink-0">
               <div className="sticky top-6 space-y-4">
-                <RightSidebarCard title="Upcoming holidays" image='Calendar'>
+                <RightSidebarCard title="Upcoming Holidays" image='Calendar'>
                   {rightbar.holidays.map((h) => (
-                    <MiniRow key={h.name} primary={h.name} secondary={h.date} />
+                    <MiniRow key={h.name} name={h.name} role={h.role} today={h.today} date={h.date} image={h.image} />
                   ))}
                 </RightSidebarCard>
 
                 <RightSidebarCard title="On Leave" image='Coffee'>
                   {rightbar.onLeave.map((p) => (
-                    <MiniRow key={p.name} primary={p.name} secondary={p.date} />
+                    <MiniRow key={p.name} name={p.name} role={p.role} today={p.today} date={p.date} image={p.image} />
                   ))}
                 </RightSidebarCard>
 
                 <RightSidebarCard title="Birthday" image='Cake'>
                   {rightbar.birthdays.map((b) => (
-                    <MiniRow key={b.name} primary={b.name} secondary={b.date} />
+                    <MiniRow key={b.name} name={b.name} role={b.role} today={b.today} date={b.date} image={b.image} />
                   ))}
                 </RightSidebarCard>
               </div>

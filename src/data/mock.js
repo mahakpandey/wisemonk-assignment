@@ -79,14 +79,14 @@ export const dashboardMock = {
       { name: 'Christmas', month: 'Nov', date: '24' },
     ],
     onLeave: [
-      { name: 'Rajesh Singh', role: 'developer', date: 'Oct 15 - Oct 16' },
-      { name: 'Priya Sharma', role: 'Designer', date: 'Oct 20' },
-      { name: 'Rahul Kumar', role: 'Accountant', date: 'Oct 21' },
+      { name: 'Rajesh Singh', role: 'developer',today: true, date: 'Oct 15 - Oct 16' ,image: 'rajesh.svg'},
+      { name: 'Priya Sharma', role: 'Designer',today:false, date: 'Oct 20', image: 'priya.svg' },
+      { name: 'Rahul Kumar', role: 'Accountant',today:false , date: 'Oct 21', image: 'rahul.svg' },
     ],
     birthdays: [
-      { name: 'Priya Sharma', role: 'Designer', date: 'Today' },
-      { name: 'Rahul Kumar', role: 'Accountant', date: 'Oct 22' },
-      { name: 'Rajesh Singh', role: 'developer', date: 'Oct 25' },
+      { name: 'Priya Sharma', role: 'Designer',today:true, date: '', image:'priya.svg' },
+      { name: 'Rahul Kumar', role: 'Accountant',today:false, date: 'Oct 22', image:'rahul.svg' },
+      { name: 'Rajesh Singh', role: 'developer',today:false, date: 'Oct 25', image: 'rajesh.svg' },
     ],
   }
 }
