@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import { MotionDiv } from "../../shared/ui/Motion";
 
-const Card = ({ children , className}) => {
+const Card = ({ children, className = "" }) => {
   return (
-    <div className={`${className} px-5 py-4 bg-white hover:bg-[#F0F1F1] rounded-lg shadow-xs`}>
+    <MotionDiv
+      className={`${className} px-5 py-4 bg-white rounded-lg shadow-xs`.trim()}
+      whileHover={{ backgroundColor: "rgba(240, 241, 241, 1)" }}
+      transition={{ duration: 0.2 }}
+    >
       {children}
-    </div>
-  )
-}
+    </MotionDiv>
+  );
+};
 
-export default Card
+export default Card;

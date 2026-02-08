@@ -1,53 +1,92 @@
-import logo from '../../assets/Logo.svg'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { MotionDiv } from "../../shared/ui/Motion";
+import logo from "../../assets/Logo.svg";
+import { useNavigate, useLocation } from "react-router-dom";
+import Button from "../button/Button";
 
+const navList = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04, delayChildren: 0.06 },
+  },
+};
 
-export function Sidebar({ sections = [], logoSrc = logo, drawer = false, onLinkClick }) {
+const navItem = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0 },
+};
+
+export function Sidebar({
+  sections = [],
+  logoSrc = logo,
+  drawer = false,
+  onLinkClick,
+}) {
   return (
-    <aside className={drawer ? "w-[260px] shrink-0 bg-white px-4 py-6 h-full flex flex-col" : "hidden w-[260px] shrink-0 bg-white px-4 py-6 lg:block"}>
-      <div className="flex items-center gap-3 px-2">
+    <aside
+      className={
+        drawer
+          ? "w-[260px] shrink-0 bg-white px-4 py-6 h-full flex flex-col"
+          : "hidden w-[260px] shrink-0 bg-white px-4 py-6 lg:block"
+      }
+    >
+      <MotionDiv
+        className="flex items-center gap-3 px-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
+      >
         <img src={logoSrc} alt="Logo" />
-      </div>
+      </MotionDiv>
 
-      <div className="mt-10 px-2 flex flex-col gap-2">
+      <MotionDiv
+        className="mt-10 px-2 flex flex-col gap-2"
+        variants={navList}
+        initial="hidden"
+        animate="visible"
+      >
         {sections.map((section, idx) => (
-          <div key={section.sectionTitle ?? idx}>
+          <div
+            key={section.sectionTitle ?? idx}
+            className="flex flex-col gap-2"
+          >
             {section.sectionTitle && (
               <div className="text-gray-300 font-light px-2 py-4 m-0">
                 {section.sectionTitle}
               </div>
             )}
             {section.items?.map((item) => (
-              <NavItem key={item.label} {...item} onLinkClick={onLinkClick} />
+              <MotionDiv key={item.label} variants={navItem}>
+                <NavItem {...item} onLinkClick={onLinkClick} />
+              </MotionDiv>
             ))}
           </div>
         ))}
-      </div>
+      </MotionDiv>
     </aside>
-  )
+  );
 }
 
 function NavItem({ label, route, icon, onLinkClick }) {
-  const Icon = icon
-  const navigate = useNavigate()
-  const location = useLocation()
-  const active = location.pathname === route
+  const Icon = icon;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const active = location.pathname === route;
   const handleClick = () => {
-    onLinkClick?.()
-    navigate(route)
-  }
+    onLinkClick?.();
+    navigate(route);
+  };
   return (
-    <button
+    <Button
+      variant="nav"
       type="button"
       onClick={handleClick}
-      className={[
-        'flex items-center justify-start gap-2 rounded-xl px-3 py-2 text-md font-medium transition-colors w-full text-left',
-        active ? 'bg-[#2684FF1A]' : 'hover:bg-sky-50',
-      ].join(' ')}
+      className={active ? "bg-[#2684FF1A]" : "hover:bg-sky-50"}
     >
-      <Icon className={active ? 'text-[#2684FF]' : 'text-gray-900'} />
-      <span className={active ? 'text-[#2684FF]' : 'text-gray-900'}>{label}</span>
-    </button>
-  )
+      <Icon className={active ? "text-[#2684FF]" : "text-gray-900"} />
+      <span className={active ? "text-[#2684FF]" : "text-gray-900"}>
+        {label}
+      </span>
+    </Button>
+  );
 }
-

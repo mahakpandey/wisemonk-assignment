@@ -12,7 +12,7 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar.jsx";
+import Navbar from "./components/navbar/Navbar.jsx";
 import logo from "./assets/Logo.svg";
 import { useAuth } from "./features/auth/AuthContext.jsx";
 import { LogIn, LogOut } from "lucide-react";
@@ -20,9 +20,11 @@ import MainContainer from "./features/main/MainContainer.jsx";
 import Button from "./components/button/Button.jsx";
 import { Suspense } from "react";
 
+const NAV_BUTTON_CLASS =
+  "flex items-center cursor-pointer gap-2 font-bold bg-white text-sm sm:text-base text-[#626368] border border-[#626368] sm:px-4 sm:py-2 px-2 py-1 rounded-lg hover:bg-slate-50";
+
 export default function App() {
   const pathname = useLocation().pathname;
-  console.log(pathname === "/");
   const navigate = useNavigate();
 
   const { isAuthenticated, user, logout } = useAuth();
@@ -57,7 +59,7 @@ export default function App() {
                 </span>
                 <Button
                   onClick={handleLogout}
-                  className="flex items-center cursor-pointer gap-2 font-bold bg-white text-sm sm:text-base text-[#626368] border border-[#626368] sm:px-4 sm:py-2 px-2 py-1 rounded-lg hover:bg-slate-50"
+                  className={NAV_BUTTON_CLASS}
                   variant="secondary"
                 >
                   Log out
@@ -68,7 +70,7 @@ export default function App() {
               <Button
                 onClick={() => navigate("/signup")}
                 variant="secondary"
-                className="flex items-center cursor-pointer gap-2 font-bold bg-white text-sm sm:text-base text-[#626368] border border-[#626368] sm:px-4 sm:py-2 px-2 py-1 rounded-lg"
+                className={NAV_BUTTON_CLASS}
               >
                 <span className="text-sm font-medium text-[#626368]">
                   Sign up
@@ -79,7 +81,7 @@ export default function App() {
               <Button
                 onClick={() => navigate("/login")}
                 variant="secondary"
-                className="flex items-center cursor-pointer gap-2 font-bold bg-white text-sm sm:text-base text-[#626368] border border-[#626368] sm:px-4 sm:py-2 px-2 py-1 rounded-lg"
+                className={NAV_BUTTON_CLASS}
               >
                 <span className="text-sm font-medium text-[#626368]">
                   Login

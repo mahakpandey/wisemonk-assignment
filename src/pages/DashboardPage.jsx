@@ -1,7 +1,5 @@
-import { lazy } from "react";
-
-const LazyDashboard = lazy(() => import("../features/Dashboard/Dashboard.jsx"));
+import Dashboard from "../features/dashboard/Dashboard.jsx";
 
 export default function DashboardPage() {
-  return <LazyDashboard />;
+  return <Dashboard />;
 }

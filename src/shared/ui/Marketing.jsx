@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/button/Button";
 import Convincely from "../../assets/convincely.svg";
 import Utrip from "../../assets/utrip.svg";
 import Wieldy from "../../assets/wieldy.svg";
@@ -6,10 +7,11 @@ import BeautyGarage from "../../assets/BeautyGarage.svg";
 import Leverage from "../../assets/leverage.svg";
 import ISO from "../../assets/ISO.svg";
 import ASICP from "../../assets/image25.svg";
+import { MotionDiv } from "./Motion";
 
 const Marketing = () => {
   return (
-    <div className="hidden lg:block relative w-full lg:w-[60%] bg-[radial-gradient(circle,rgba(232,240,255,1)_0%,rgba(255,255,255,1)_80%)] gap-10">
+    <MotionDiv className="hidden lg:block relative w-full lg:w-[60%] bg-[radial-gradient(circle,rgba(232,240,255,1)_0%,rgba(255,255,255,1)_80%)] gap-10">
       <div className="relative mx-auto flex h-full flex-col justify-between gap-10">
         <div className="flex flex-col gap-16">
           <h2 className="mt-10 px-6 sm:px-10 lg:px-10 text-balance text-center text-[30px] font-bold leading-tight tracking-tight text-gray-900 sm:text-[40px]">
@@ -23,38 +25,53 @@ const Marketing = () => {
             </p>
             <div className="flex flex-col items-center">
               <div className="w-full mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                <button className="w-full h-full gap-2 flex items-center justify-center bg-white rounded-2xl py-2 px-4">
+                <Button
+                  variant="secondary"
+                  className="w-full h-full gap-2 flex items-center justify-center bg-white rounded-2xl py-2 px-4 border-0"
+                >
                   <img src={Convincely} alt="convincely" />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Convincely
                   </span>
-                </button>
-                <button className="w-full h-full flex items-center justify-center gap-2 bg-white rounded-2xl py-2 px-4">
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="w-full h-full flex items-center justify-center gap-2 bg-white rounded-2xl py-2 px-4 border-0"
+                >
                   <img src={Utrip} alt="utrip" />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Youtrip
                   </span>
-                </button>
-                <button className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white ">
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
+                >
                   <img src={Wieldy} alt="wieldy" />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Wieldy.ai
                   </span>
-                </button>
+                </Button>
               </div>
               <div className="w-full mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                <button className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white">
+                <Button
+                  variant="secondary"
+                  className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
+                >
                   <img src={BeautyGarage} alt="beauty-garage" />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Beauty Garage
                   </span>
-                </button>
-                <button className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white ">
+                </Button>
+                <Button
+                  variant="secondary"
+                  className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
+                >
                   <img src={Leverage} alt="leverage" />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg text-nowrap">
                     Leverage Companies
                   </span>
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -88,7 +105,7 @@ const Marketing = () => {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 };
 

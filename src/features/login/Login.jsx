@@ -1,11 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
-import { useEffect } from "react";
-import Button from "../../components/button/Button";
-import Divider from "../../components/divider/Divider";
-import GoogleIcon from "../../assets/GoogleIcon.svg";
-import { Link } from "react-router-dom";
+import { MotionDiv } from "../../shared/ui/Motion";
 import Marketing from "../../shared/ui/Marketing";
 import LoginForm from "./LoginForm";
 
@@ -19,8 +15,12 @@ const Login = () => {
 
   return (
     <div className="bg-white flex flex-col lg:flex-row sm:px-10 mx-auto items-center max-w-[1400px] w-full flex-1 mb-10">
-      {/* Left: form */}
-      <div className="flex flex-col px-6 sm:px-8 lg:px-10 my-auto w-full lg:w-[40%] gap-16">
+      <MotionDiv
+        className="flex flex-col px-6 sm:px-8 lg:px-10 my-auto w-full lg:w-[40%] gap-16"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         <div className="max-w-md mx-auto">
           <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900 sm:text-[34px]">
             Welcome back to Wisemonk
@@ -51,9 +51,8 @@ const Login = () => {
             .
           </p>
         </div>
-      </div>
+      </MotionDiv>
 
-      {/* Right: marketing */}
       <Marketing />
     </div>
   );

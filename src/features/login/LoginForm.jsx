@@ -50,10 +50,11 @@ const LoginForm = () => {
             autoComplete="current-password"
             className="pr-10"
           />
-          <button
+          <Button
+            variant="iconGhost"
             type="button"
             onClick={() => setShowPassword((p) => !p)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-900/20 rounded p-0.5"
+            className="absolute right-3 top-1/2 -translate-y-1/2"
             aria-label={showPassword ? "Hide password" : "Show password"}
             tabIndex={0}
           >
@@ -62,7 +63,7 @@ const LoginForm = () => {
             ) : (
               <Eye className="w-5 h-5" />
             )}
-          </button>
+          </Button>
         </div>
         <Button
           type="submit"
