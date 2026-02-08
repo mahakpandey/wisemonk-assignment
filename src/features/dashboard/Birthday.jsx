@@ -7,9 +7,9 @@ const BirthdayCard= ({ people, avatarImages }) => {
   const thisWeek = people.filter((p) => !p.today)
 
   return (
-    <div className="font-satoshi flex flex-col rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+    <div className="font-satoshi flex flex-col rounded-xl bg-white px-5 py-4">
       <div className="flex items-center gap-2 pb-3 border-b border-slate-200">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F2F5]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg  bg-white border border-slate-100">
           <Cake className="h-4 w-4 text-slate-600" />
         </span>
         <h3 className="text-[16px] font-bold text-slate-800">Birthday</h3>

@@ -2,10 +2,10 @@ import { Calendar } from "lucide-react";
 
 const UpcomingHolidaysCard = ({ holidays }) => {
   return (
-    <div className="font-satoshi flex flex-col rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+    <div className="font-satoshi flex flex-col rounded-xl bg-white px-5 py-4">
       <div className="flex items-center justify-between pb-3 border-b border-slate-200">
         <div className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F0F2F5]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-slate-100">
             <Calendar className="h-4 w-4 text-slate-600" />
           </span>
           <h3 className="text-[16px] font-bold text-slate-800">

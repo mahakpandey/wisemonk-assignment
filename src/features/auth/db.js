@@ -1,4 +1,4 @@
-
+import { hashPassword } from "./crypto.js";
 
 const DB_NAME = 'wisemonk-auth'
 const DB_VERSION = 1
@@ -46,4 +46,18 @@ export function getUserByEmail(email) {
 
 export function userExists(email) {
   return getUserByEmail(email).then((u) => !!u)
+}
+
+/** Test user for platform demo - email: test@gmail.com, password: test@123 */
+export async function seedTestUser() {
+  const TEST_USER = { email: "test@gmail.com", password: "test@123", fullName: "Test User" };
+  const exists = await userExists(TEST_USER.email);
+  if (exists) return;
+  const { hash } = await hashPassword(TEST_USER.password);
+  await addUser({
+    email: TEST_USER.email,
+    passwordHash: hash,
+    fullName: TEST_USER.fullName,
+    createdAt: new Date().toISOString(),
+  });
 }

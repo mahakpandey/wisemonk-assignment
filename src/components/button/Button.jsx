@@ -1,7 +1,7 @@
 import { MotionButton } from "../../shared/ui/Motion";
 
-function cn(...parts) {
-  return parts.filter(Boolean).join(" ");
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
 }
 
 const baseStyles = {
