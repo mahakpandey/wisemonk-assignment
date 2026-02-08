@@ -48,10 +48,10 @@ const Requests = ({ leaveRequests, reimbursementRequests, avatarImages }) => {
                   <div className="text-[13px] font-light text-slate-500">{item.role}</div>
                 </div>
               </div>
-              <div className="flex flex-1 justify-center text-sm font-medium text-gray-400">
+              <div className="hidden xs:flex flex-1 justify-center text-sm font-medium text-gray-400">
                 {item.date}
               </div>
-              <div className="flex flex-1 justify-center text-sm font-medium text-gray-400">
+              <div className="hidden xs:flex flex-1 justify-center text-sm font-medium text-gray-400">
                   {item.note}
               </div>
               <div className="flex flex-1 min-w-0 justify-end items-center gap-2">
@@ -97,22 +97,22 @@ const Requests = ({ leaveRequests, reimbursementRequests, avatarImages }) => {
                   <div className="text-[13px] font-light text-slate-500">{item.role}</div>
                 </div>
               </div>
-              <div className="flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
+              <div className="hidden xs:flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
                 <span>{item.amount}</span>
               </div>
-              <div className="flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
+              <div className="hidden xs:flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
                 <span>{item.reason}</span>
               </div>
               <div className="flex shrink-0 gap-2">
                 <Button
                   variant="secondary"
-                  className="rounded-lg px-4 py-2 bg-[#2684FF]/10 text-[#2684FF] hover:bg-[#2684FF]/20 border-0"
+                  className="rounded-lg text-sm font-bold px-4 py-1 bg-[#2684FF]/10 text-[#2684FF] hover:bg-[#2684FF]/20 border-0"
                 >
                   Reject
                 </Button>
                 <Button
                   variant="primary"
-                  className="rounded-lg bg-[#2684FF] text-white hover:bg-blue-600"
+                  className="rounded-lg text-sm font-boldpx-4 py-1 bg-[#2684FF] text-white hover:bg-blue-600"
                 >
                   Approve
                 </Button>

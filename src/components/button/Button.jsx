@@ -1,7 +1,8 @@
 import { MotionButton } from "../../shared/ui/Motion";
+import { twMerge } from "tailwind-merge";
 
 function cn(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return twMerge(classes.filter(Boolean).join(" "));
 }
 
 const baseStyles = {

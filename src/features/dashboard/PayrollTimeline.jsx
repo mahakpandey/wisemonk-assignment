@@ -41,7 +41,7 @@ function PayrollTimelineItem({ date, label, status, byWisemonk, isLast }) {
           </span>
         </div>
         {byWisemonk && (
-          <span className="shrink-0 rounded-full bg-[#2684FF]/10 px-2.5 py-0.5 text-xs font-medium text-[#2684FF]">
+          <span className="hidden xs:block shrink-0 rounded-full bg-[#2684FF]/10 px-2.5 py-0.5 text-xs font-medium text-[#2684FF]">
             by Wisemonk
           </span>
         )}
