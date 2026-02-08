@@ -55,11 +55,11 @@ const PayrollTimeline = ({ payrollTimeline }) => {
 
   return (
       <Card>
-                <div className="font-satoshi">
+                <div className="flex flex-col gap-2.5 pb-3 border-b border-slate-200">
                   <h2 className="text-[16px] font-bold tracking-tight text-slate-900">
                     Payroll and Compliance Timeline
                   </h2>
-                  <p className="mt-1 text-[12px] font-medium text-gray-400">
+                  <p className="text-[12px] font-medium text-gray-400">
                     Key deadlines and milestones for the current month.
                   </p>
                 </div>
