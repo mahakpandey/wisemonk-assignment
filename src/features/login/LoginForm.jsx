@@ -3,7 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import { Eye, EyeOff } from "lucide-react";
-import GoogleIcon from "../../assets/GoogleIcon.svg";
+import GoogleIcon from "../../assets/GoogleIcon.svg?react";
 import Divider from "../../components/divider/Divider";
 import { Link } from "react-router-dom";
 
@@ -21,7 +21,7 @@ const LoginForm = () => {
   return (
     <div className="mt-10 space-y-6">
       <Button className="w-full justify-center border border-slate-200 rounded-md bg-white text-slate-900 hover:bg-slate-50 ">
-        <img src={GoogleIcon} alt="google" className="w-4 h-4" />
+        <GoogleIcon className="w-4 h-4" aria-hidden />
         <span className="text-sm font-medium text-slate-900">
           Sign in with Google
         </span>

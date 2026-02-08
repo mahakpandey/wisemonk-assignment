@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Sidebar } from "../../components/sidebar/Sidebar";
 import { defaultSidebarSections } from "../../data/sidebarConfig";
-import logo from "../../assets/Logo.svg";
 import Navbar from "../../components/navbar/Navbar";
 import { useAuth } from "../auth/AuthContext";
 import { dashboardMock } from "../../data/mock";
@@ -54,14 +53,13 @@ const MainContainer = () => {
 
   return (
     <div className="min-h-dvh flex bg-[#F1F8FF]">
-      <Sidebar sections={defaultSidebarSections} logoSrc={logo} />
+      <Sidebar sections={defaultSidebarSections} />
 
       <div className="lg:hidden">
         <Sheet open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
           <SheetContent side="left" className="p-0 w-[260px]" showCloseButton>
             <Sidebar
               sections={defaultSidebarSections}
-              logoSrc={logo}
               drawer
               onLinkClick={() => setIsDrawerOpen(false)}
             />

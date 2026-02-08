@@ -5,7 +5,7 @@ import { useAuth } from "../auth/AuthContext";
 import Button from "../../components/button/Button";
 import Divider from "../../components/divider/Divider";
 import Input from "../../components/input/Input";
-import GoogleIcon from "../../assets/GoogleIcon.svg";
+import GoogleIcon from "../../assets/GoogleIcon.svg?react";
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 import Marketing from "../../shared/ui/Marketing";
@@ -48,7 +48,7 @@ const Signup = () => {
 
           <div className="mt-10 space-y-6">
             <Button className="border border-slate-200 rounded-md bg-white text-slate-900 hover:bg-slate-50 w-full justify-center">
-              <img src={GoogleIcon} alt="google" className="w-4 h-4" />
+              <GoogleIcon className="w-4 h-4" aria-hidden />
               <span className="text-sm font-medium text-slate-900">
                 Sign up with Google
               </span>

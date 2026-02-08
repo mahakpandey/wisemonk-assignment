@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "../../components/button/Button";
-import Convincely from "../../assets/convincely.svg";
-import Utrip from "../../assets/utrip.svg";
-import Wieldy from "../../assets/wieldy.svg";
-import BeautyGarage from "../../assets/BeautyGarage.svg";
-import Leverage from "../../assets/leverage.svg";
-import ISO from "../../assets/ISO.svg";
-import ASICP from "../../assets/image25.svg";
+import Convincely from "../../assets/convincely.svg?react";
+import Utrip from "../../assets/utrip.svg?react";
+import Wieldy from "../../assets/wieldy.svg?react";
+import BeautyGarage from "../../assets/beautygarage.svg?react";
+import Leverage from "../../assets/leverage.svg?react";
+import ISO from "../../assets/iso.svg?react";
+import ASICP from "../../assets/image25.svg?react";
 import { MotionDiv } from "./Motion";
 
 const Marketing = () => {
@@ -29,7 +29,7 @@ const Marketing = () => {
                   variant="secondary"
                   className="w-full h-full gap-2 flex items-center justify-center bg-white rounded-2xl py-2 px-4 border-0"
                 >
-                  <img src={Convincely} alt="convincely" />
+                  <Convincely className="h-8 w-auto" aria-hidden />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Convincely
                   </span>
@@ -38,7 +38,7 @@ const Marketing = () => {
                   variant="secondary"
                   className="w-full h-full flex items-center justify-center gap-2 bg-white rounded-2xl py-2 px-4 border-0"
                 >
-                  <img src={Utrip} alt="utrip" />
+                  <Utrip className="h-8 w-auto" aria-hidden />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Youtrip
                   </span>
@@ -47,7 +47,7 @@ const Marketing = () => {
                   variant="secondary"
                   className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
                 >
-                  <img src={Wieldy} alt="wieldy" />
+                  <Wieldy className="h-8 w-auto" aria-hidden />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Wieldy.ai
                   </span>
@@ -58,7 +58,7 @@ const Marketing = () => {
                   variant="secondary"
                   className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
                 >
-                  <img src={BeautyGarage} alt="beauty-garage" />
+                  <BeautyGarage className="h-8 w-auto" aria-hidden />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg">
                     Beauty Garage
                   </span>
@@ -67,7 +67,7 @@ const Marketing = () => {
                   variant="secondary"
                   className="w-full h-full flex items-center justify-center gap-2 rounded-2xl py-2 px-4 bg-white border-0"
                 >
-                  <img src={Leverage} alt="leverage" />
+                  <Leverage className="h-8 w-auto" aria-hidden />
                   <span className="text-sm font-bold text-gray-800 sm:text-lg text-nowrap">
                     Leverage Companies
                   </span>
@@ -97,8 +97,8 @@ const Marketing = () => {
 
         <div className="flex flex-col items-center  px-6 sm:px-10 lg:px-10">
           <div className="flex ">
-            <img src={ASICP} alt="soc2" />
-            <img src={ISO} alt="iso" />
+            <ASICP className="h-8 w-auto" aria-hidden />
+            <ISO className="h-8 w-auto" aria-hidden />
           </div>
           <div className="text-neutral-500 text-lg font-bold">
             SOC 2 and ISO certified.

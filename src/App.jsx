@@ -13,7 +13,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar.jsx";
-import logo from "./assets/Logo.svg";
+import Logo from "./assets/Logo.svg?react";
 import { useAuth } from "./features/auth/AuthContext.jsx";
 import { LogIn, LogOut } from "lucide-react";
 import MainContainer from "./features/main/MainContainer.jsx";
@@ -50,7 +50,7 @@ export default function App() {
             }
           >
             <div>
-              <img src={logo} alt="logo" className="h-7 sm:h-8" />
+              <Logo className="h-7 sm:h-8" aria-hidden />
             </div>
             {isAuthenticated ? (
               <div className="flex items-center gap-3">

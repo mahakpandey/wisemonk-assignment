@@ -1,5 +1,5 @@
 import { MotionDiv } from "../../shared/ui/Motion";
-import logo from "../../assets/Logo.svg";
+import Logo from "../../assets/Logo.svg?react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "../button/Button";
 
@@ -16,12 +16,7 @@ const navItem = {
   visible: { opacity: 1, x: 0 },
 };
 
-export function Sidebar({
-  sections = [],
-  logoSrc = logo,
-  drawer = false,
-  onLinkClick,
-}) {
+export function Sidebar({ sections = [], drawer = false, onLinkClick }) {
   return (
     <aside
       className={
@@ -36,7 +31,7 @@ export function Sidebar({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
       >
-        <img src={logoSrc} alt="Logo" />
+        <Logo className="h-8 w-auto" aria-hidden />
       </MotionDiv>
 
       <MotionDiv
