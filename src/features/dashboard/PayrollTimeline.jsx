@@ -9,10 +9,10 @@ function PayrollTimelineItem({ date, label, status, byWisemonk, isLast }) {
   const isWarning = status === 'warning'
   const isPending = status === 'pending'
   return (
-    <div className="relative flex gap-3">
+    <div className="relative flex gap-3 pb-4.25">
 
       {!isLast && (
-        <div className="absolute left-[17px] top-6 bottom-0 w-px bg-slate-200" aria-hidden />
+        <div className="absolute left-[17px] top-10 bottom-0 w-px bg-slate-200" aria-hidden />
       )}
 
       <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
@@ -33,7 +33,7 @@ function PayrollTimelineItem({ date, label, status, byWisemonk, isLast }) {
         )}
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-wrap items-center justify-between gap-x-2 gap-y-1 pb-4.25">
+      <div className="flex min-w-0 flex-1 flex-wrap items-center justify-between gap-x-2 gap-y-1">
         <div className="flex min-w-0 flex-1 items-baseline gap-4">
           <span className="text-sm font-bold text-gray-500 pr-8">{date}</span>
           <span className={[isPending ? 'text-sm font-bold text-slate-900' : 'text-sm font-bold text-slate-900', 'p-2']}>
@@ -63,7 +63,7 @@ const PayrollTimeline = ({ payrollTimeline }) => {
                     Key deadlines and milestones for the current month.
                   </p>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col gap-1">
                   {payrollTimeline.map((item, index) => (
                     <PayrollTimelineItem
                       key={`${item.date}-${item.label}`}

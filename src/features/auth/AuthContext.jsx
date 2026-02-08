@@ -13,6 +13,9 @@ import { addUser, getUserByEmail, userExists } from "./db.js";
 
 const AuthContext = createContext(null);
 
+/** Test user for platform demo - email: test@gmail.com, password: test@123 */
+const TEST_USER = { email: "test@gmail.com", password: "test@123", fullName: "Test User" };
+
 export function useAuth() {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used within AuthProvider");
@@ -93,6 +96,21 @@ export function AuthProvider({ children }) {
     const em = email.trim().toLowerCase();
     setLoading(true);
     try {
+      // Test user for platform demo
+      if (em === TEST_USER.email && password === TEST_USER.password) {
+        const session = {
+          email: TEST_USER.email,
+          fullName: TEST_USER.fullName,
+          loggedInAt: new Date().toISOString(),
+        };
+        setSession(session);
+        setState({
+          user: { email: session.email, fullName: session.fullName },
+          isAuthenticated: true,
+        });
+        setLoading(false);
+        return;
+      }
       const user = await getUserByEmail(em);
       if (!user) {
         setError("No account found with this email.");
