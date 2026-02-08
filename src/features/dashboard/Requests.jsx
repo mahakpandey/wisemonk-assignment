@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../../components/card/Card";
 import {
   Avatar,
@@ -49,13 +48,13 @@ const Requests = ({ leaveRequests, reimbursementRequests, avatarImages }) => {
                   <div className="text-xs text-slate-500">{item.role}</div>
                 </div>
               </div>
-              <div className="text-sm font-normal text-slate-700">
+              <div className="flex flex-1 justify-center text-sm font-medium text-gray-400">
                 {item.date}
               </div>
-              <div className="flex flex-1 min-w-0 justify-end items-center gap-2">
-                <span className="text-sm font-normal text-slate-700">
+              <div className="flex flex-1 justify-center text-sm font-medium text-gray-400">
                   {item.note}
-                </span>
+              </div>
+              <div className="flex flex-1 min-w-0 justify-end items-center gap-2">
                 <Button
                   variant="icon"
                   type="button"
@@ -76,7 +75,7 @@ const Requests = ({ leaveRequests, reimbursementRequests, avatarImages }) => {
           {reimbursementRequests.map((item) => (
             <div
               key={item.id}
-              className="flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+              className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
             >
               <div className="flex min-w-0 items-center gap-3">
                 <Avatar className="h-10 w-10 shrink-0">
@@ -98,14 +97,16 @@ const Requests = ({ leaveRequests, reimbursementRequests, avatarImages }) => {
                   <div className="text-xs text-slate-500">{item.role}</div>
                 </div>
               </div>
-              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-1 text-sm font-normal text-slate-700">
+              <div className="flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
                 <span>{item.amount}</span>
+              </div>
+              <div className="flex min-w-0 flex-1 items-center justify-center text-sm font-medium text-gray-400">
                 <span>{item.reason}</span>
               </div>
               <div className="flex shrink-0 gap-2">
                 <Button
                   variant="secondary"
-                  className="rounded-lg p-2 bg-[#2684FF]/10 text-[#2684FF] hover:bg-[#2684FF]/20 border-0"
+                  className="rounded-lg px-4 py-2 bg-[#2684FF]/10 text-[#2684FF] hover:bg-[#2684FF]/20 border-0"
                 >
                   Reject
                 </Button>

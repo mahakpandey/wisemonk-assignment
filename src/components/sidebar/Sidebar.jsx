@@ -21,8 +21,8 @@ export function Sidebar({ sections = [], drawer = false, onLinkClick }) {
     <aside
       className={
         drawer
-          ? "w-[260px] shrink-0 bg-white px-4 py-6 h-full flex flex-col"
-          : "hidden w-[260px] shrink-0 bg-white px-4 py-6 lg:block"
+          ? "w-65 shrink-0 bg-white px-4 py-6 h-full flex flex-col"
+          : "hidden w-65 shrink-0 bg-white px-4 py-6 lg:block"
       }
     >
       <MotionDiv
@@ -43,10 +43,10 @@ export function Sidebar({ sections = [], drawer = false, onLinkClick }) {
         {sections.map((section, idx) => (
           <div
             key={section.sectionTitle ?? idx}
-            className="flex flex-col gap-2"
+            className="flex flex-col"
           >
             {section.sectionTitle && (
-              <div className="text-gray-300 font-light px-2 py-4 m-0">
+              <div className="text-gray-300 font-light text-[13px] px-3 py-2.25 m-0">
                 {section.sectionTitle}
               </div>
             )}

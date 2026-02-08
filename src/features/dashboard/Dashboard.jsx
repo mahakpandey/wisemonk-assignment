@@ -76,7 +76,7 @@ const Dashboard = () => {
         </MotionDiv>
 
         <MotionDiv
-          className="flex flex-col gap-4 w-full xl:w-[360px] xl:shrink-0 xl:min-h-0 xl:overflow-y-auto min-w-0"
+          className="flex flex-col gap-4 w-full xl:w-90 xl:shrink-0 xl:min-h-0 xl:overflow-y-auto min-w-0"
           variants={container}
           initial="hidden"
           animate="visible"

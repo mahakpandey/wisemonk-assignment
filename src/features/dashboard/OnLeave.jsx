@@ -28,9 +28,9 @@ import { Avatar, AvatarImage, AvatarFallback } from '../../components/avatar/Ava
                 </Avatar>
                 <div className="min-w-0 flex-1">
                   <div className="text-[14px] font-bold text-slate-800">{p.name}</div>
-                  <div className="text-[12px] font-medium text-slate-500">{p.role}</div>
+                  <div className="text-[13px] font-light text-slate-500">{p.role}</div>
                 </div>
-                <span className="shrink-0 text-[12px] font-normal text-slate-500">{p.date}</span>
+                <span className="shrink-0 text-[14px] font-medium text-slate-500">{p.date}</span>
               </div>
             ))}
           </div>
@@ -38,9 +38,9 @@ import { Avatar, AvatarImage, AvatarFallback } from '../../components/avatar/Ava
       )}
 
       {thisWeek.length > 0 && (
-        <div className={today.length > 0 ? 'mt-3 pt-3 border-t border-slate-200' : 'mt-3'}>
+        <div className={today.length > 0 ? 'mt-3 pt-3 ' : 'mt-3'}>
           <h4 className="text-[14px] font-bold text-slate-800">This week</h4>
-          <div className="mt-2 flex flex-col divide-y divide-slate-200">
+          <div className="mt-2 flex flex-col">
             {thisWeek.map((p) => (
               <div key={p.name} className="flex items-center gap-3 py-3 first:pt-0">
                 <Avatar className="h-10 w-10 shrink-0">
@@ -49,9 +49,9 @@ import { Avatar, AvatarImage, AvatarFallback } from '../../components/avatar/Ava
                 </Avatar>
                 <div className="min-w-0 flex-1">
                   <div className="text-[14px] font-bold text-slate-800">{p.name}</div>
-                  <div className="text-[12px] font-medium text-slate-500">{p.role}</div>
+                  <div className="text-[13px] font-light text-slate-500">{p.role}</div>
                 </div>
-                <span className="shrink-0 text-[12px] font-normal text-slate-500">{p.date}</span>
+                <span className="shrink-0 text-[14px] font-medium text-slate-500">{p.date}</span>
               </div>
             ))}
           </div>
